@@ -20,7 +20,8 @@ const Profile = () => {
             setAPIData(getData.data);
         })
   }
-
+  
+  getData();
   console.log(APIData)
 
     return(
