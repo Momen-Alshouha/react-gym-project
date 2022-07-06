@@ -68,7 +68,7 @@
   margin: 30px 0px 0px 80px;
 }
 .parent li:nth-child(1) {
-  margin-top: 70px;
+  margin-top: 40px;
 }
 .parent label {
   color: #ade8f4;
@@ -91,7 +91,7 @@
   border-radius: 40px;
   background-color: white;
   color: rgb(24, 24, 104);
-  margin: 40px 0px 30px 80px;
+  margin: 30px 0px 30px 80px;
 }
 ::-webkit-input-placeholder {
   color: white;
