@@ -94,7 +94,7 @@
   margin: 30px 0px 30px 80px;
 }
 ::-webkit-input-placeholder {
-  color: white;
+  color: rgb(78, 45, 45);
 }
 .anchor {
   font-size: 12px;
