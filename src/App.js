@@ -8,6 +8,7 @@ import Schedule from "./components/Schedule/Schedule";
 import Trainers from "./components/Trainers/Trainers";
 import Contact from './components/Contact/Contact';
 import Profile from "./components/Profile/Profile";
+import Register from "./components/Register/Register";
 
 const App = () => (
   <div className="App">
