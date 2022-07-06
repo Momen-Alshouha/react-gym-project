@@ -7,16 +7,25 @@ import Classes from "./components/OurClasses/Classes";
 import Schedule from "./components/Schedule/Schedule";
 import Trainers from "./components/Trainers/Trainers";
 import Contact from './components/Contact/Contact';
+// import Header from "./components/Navbar/Header";
+import Login from "./components/Login/Login";
 
 const App = () => (
   <div className="App">
+    
     <Main />
+  
     <GymProgram />
     <Member />
+    
     <Classes />
     <Schedule />
     <Trainers />
     <Contact />
+    <Login />
+   
+   
+   
   </div>
 );
 
