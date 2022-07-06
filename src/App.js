@@ -7,9 +7,11 @@ import Classes from "./components/OurClasses/Classes";
 import Schedule from "./components/Schedule/Schedule";
 import Trainers from "./components/Trainers/Trainers";
 import Contact from './components/Contact/Contact';
+import Profile from "./components/Profile/Profile";
 
 const App = () => (
   <div className="App">
+    
     <Main />
     <GymProgram />
     <Member />
@@ -17,6 +19,7 @@ const App = () => (
     <Schedule />
     <Trainers />
     <Contact />
+    {/* <Profile /> */}
   </div>
 );
 
