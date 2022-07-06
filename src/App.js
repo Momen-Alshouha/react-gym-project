@@ -7,8 +7,12 @@ import Classes from "./components/OurClasses/Classes";
 import Schedule from "./components/Schedule/Schedule";
 import Trainers from "./components/Trainers/Trainers";
 import Contact from './components/Contact/Contact';
+
 // import Header from "./components/Navbar/Header";
-import Login from "./components/Login/Login";
+// import Login from "./components/Login/Login";
+
+
+// import Register from "./components/Register/Register";
 
 const App = () => (
   <div className="App">
@@ -22,7 +26,7 @@ const App = () => (
     <Schedule />
     <Trainers />
     <Contact />
-    <Login />
+   
    
    
    

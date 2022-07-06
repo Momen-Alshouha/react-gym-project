@@ -1,18 +1,11 @@
-
 import React, { Fragment } from "react";
-import classes from "./Login.module.css";
-
-
-
-function Login() {
-
-
-    return (
-
-        <Fragment>
+import classes from "./Register.module.css";
+const Register = () => {
+  return (
+    <Fragment>
       <div className={classes.container}>
         <div className={classes.aside}>
-          <h1 className={classes.title}>LOG IN</h1>
+          <h1 className={classes.title}>REGISTER</h1>
         </div>
         <ul className={classes.parent}>
           <form>
@@ -30,20 +23,23 @@ function Login() {
                 placeholder="Write Password Here"
               />
             </li>
-          
-            <button>Log In</button>
+            <li>
+              <label htmlFor="Confirmpassword">CONFIRM PASSWORD</label>
+              <br />
+              <input
+                type="password"
+                id="Confirmpassword"
+                placeholder="Confirm Your Password"
+              />
+            </li>
+            <button>Register</button>
             <a href="" className={classes.anchor}>
               I'm already member
             </a>
           </form>
         </ul>
       </div>
-      </Fragment>
-      
-
-
-
-    );
-}
-
-export default Login;
+    </Fragment>
+  );
+};
+export default Register;
