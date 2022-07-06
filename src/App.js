@@ -13,14 +13,14 @@ import Register from "./components/Register/Register";
 const App = () => (
   <div className="App">
     
-    <Main />
-    <GymProgram />
-    <Member />
-    <Classes />
-    <Schedule />
-    <Trainers />
-    <Contact />
-    {/* <Profile /> */}
+      {/* <Main />
+      <GymProgram />
+      <Member />
+      <Classes />
+      <Schedule />
+      <Trainers />
+      <Contact /> */}
+    <Profile />
   </div>
 );
 
