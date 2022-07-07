@@ -5,7 +5,7 @@ import GymProgram from "./components/GymProgram/GymProgram";
 import Member from "./components/Member/Member";
 import Classes from "./components/OurClasses/Classes";
 import Schedule from "./components/Schedule/Schedule";
-import Trainers from "./components/Trainers/Trainers";
+import Trainers from "./components/Trainers/Booking";
 import Contact from './components/Contact/Contact';
 
 // import Header from "./components/Navbar/Header";
