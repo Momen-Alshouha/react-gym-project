@@ -1,6 +1,29 @@
 import React from "react"
+import {useState, useEffect} from "react"
+import axios from "axios";
 
 const Profile = () => {
+
+
+  const [APIData, setAPIData] = useState([]);
+  useEffect(() => {
+      axios.get(`https://62c54cf0134fa108c24dabbc.mockapi.io/user`)
+          .then((response) => {
+              console.log(response.data)
+              setAPIData(response.data);
+          })
+  }, []);
+
+  const getData = () => {
+    axios.get(`https://60fbca4591156a0017b4c8a7.mockapi.io/fakeData`)
+        .then((getData) => {
+            setAPIData(getData.data);
+        })
+  }
+  
+  getData();
+  console.log(APIData)
+
     return(
       <div>
        <section class="vh-100">

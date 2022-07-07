@@ -17,19 +17,14 @@ import Contact from './components/Contact/Contact';
 const App = () => (
   <div className="App">
     
-    <Main />
-  
-    <GymProgram />
-    <Member />
-    
-    <Classes />
-    <Schedule />
-    <Trainers />
-    <Contact />
-   
-   
-   
-   
+      <Main />
+      <GymProgram />
+      <Member />
+      <Classes />
+      <Schedule />
+      <Trainers />
+      <Contact />
+    {/* <Profile /> */}
   </div>
 );
 
