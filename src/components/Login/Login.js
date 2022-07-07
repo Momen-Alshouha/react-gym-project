@@ -7,6 +7,7 @@ function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const ctx = useContext(Context);
+ console.log(ctx.isLoggedIn);
   const emailHandler = (event) => {
     console.log(event.target.value);
     setEmail(event.target.value);
@@ -27,16 +28,16 @@ function Login() {
         response.data[i].email !== email &&
         response.data[i].password !== password
       ) {
-        ctx.setIsLoggedIn(false);
+        localStorage.setItem('id','');
         setEmail('');
         setPassword('');
       }
       else if (response.data[i].email ===  email) {
         if (response.data[i].password !== password) {
           setPassword('');
-          console.log('l')
+          localStorage.setItem('id','');
         } else {
-          ctx.setIsLoggedIn(true);
+        
           localStorage.setItem('id',response.data[i].id);
           window.location.href="/";
         }

@@ -4,9 +4,8 @@ import React,{useContext} from "react";
 import Link from "./Link";
 import Context from "../context";
 import Button from "../GlobalComponents/Button";
-
+import Login from "../Login/Login";
 const LinksContainer = ({ hidden }) => {
-  const ctx = useContext(Context);
   return (
     <div css={styles} className={(hidden ? "hidden" : "") + " linksContainer"}>
       <Link name="HOME" linkTo="#home" />
@@ -14,8 +13,8 @@ const LinksContainer = ({ hidden }) => {
       <Link name="CLASSES" linkTo="#ourClasses" />
       <Link name="SCHEDULES" linkTo="#schedule" />
       <Link name="CONTACT" linkTo="#contact" />
-      {!(ctx.isLoggedIn) && <Button text="Logout" />}
-      {(ctx.isLoggedIn) && <Button text="SignIn" />}
+      {(localStorage.getItem('id') != '') && <Button text="Logout" />}
+      {(localStorage.getItem('id') == '') && <Button text="SignIn" />}
     </div>
   );
 };

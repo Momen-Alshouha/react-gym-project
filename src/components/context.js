@@ -3,15 +3,16 @@ import axios from "axios";
 const Context = React.createContext({
   submit: (event) => {},
   value: () => {},
-  isLoggedIn:false
+  isLoggedIn:()=>{},
+  isLoggedOut:()=>{}
 });
 export const ContextApi = (props) => {
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
   const [data, setFormValue] = useState({
     name: null,
     email: null,
     password: null,
   });
-  const [isLoggedIn,setIsLoggedIn] = useState(false);
   window.axios = require("axios");
   const Submit = (event) => {
     event.preventDefault();
@@ -28,14 +29,22 @@ export const ContextApi = (props) => {
   const valueHandler = (event) => {
     setFormValue({ ...data, [event.target.name]: event.target.value });
   };
+  const onLogin = () => {
+    localStorage.setItem('login',122);
+    setIsLoggedIn(true);
+  }
+  const onLogout = () => {
+    localStorage.removeItem('login');
+    setIsLoggedIn(false);
+  }
   return (
     <Context.Provider
       value={{
         data:data,
         submit: Submit,
         value: valueHandler,
-        isLoggedIn:isLoggedIn,
-        setIsLoggedIn:setIsLoggedIn
+        isLoggedIn:onLogin,
+        isLoggedOut:onLogout
       }}
     >
       {props.children}
