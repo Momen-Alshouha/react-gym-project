@@ -1,10 +1,12 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+import React,{useContext} from "react";
 import Link from "./Link";
+import Context from "../context";
 import Button from "../GlobalComponents/Button";
 
 const LinksContainer = ({ hidden }) => {
+  const ctx = useContext(Context);
   return (
     <div css={styles} className={(hidden ? "hidden" : "") + " linksContainer"}>
       <Link name="HOME" linkTo="#home" />
@@ -12,7 +14,8 @@ const LinksContainer = ({ hidden }) => {
       <Link name="CLASSES" linkTo="#ourClasses" />
       <Link name="SCHEDULES" linkTo="#schedule" />
       <Link name="CONTACT" linkTo="#contact" />
-      <Button text="SIGN UP" />
+      {!(ctx.isLoggedIn) && <Button text="Logout" />}
+      {(ctx.isLoggedIn) && <Button text="SignIn" />}
     </div>
   );
 };
