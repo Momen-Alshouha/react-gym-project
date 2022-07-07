@@ -3,18 +3,39 @@ import { jsx, css } from "@emotion/core";
 import React from "react";
 import Button from "../GlobalComponents/Button";
 import ContactBg from "../Image/contactBg.jpg";
-
-const Form = ({ text }) => (
+import emailjs from "@emailjs/browser";
+const Form = ({ text }) => {
+   
+    function sendEmail(e) {
+      e.preventDefault();
+  
+      emailjs.sendForm(
+          "service_ya5im95",
+          "template_mx39asn",
+          e.target,
+          "fqBe2jdaTOI5WzEp6"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log("message sent");
+          },
+          (error) => {
+            console.log(error.text);
+          });
+          e.target.reset()
+    };
+  return(
   <div css={styles} className="formContainer">
-    <form>
-      <input type="text" placeholder="Your Name*" />
-      <input type="text" placeholder="Your Email*" />
+    <form  onSubmit={sendEmail}>
+      <input type="text" placeholder="Your Name*" name="name" />
+      <input type="text" placeholder="Your Email*" name="email"/>
       <input type="text" placeholder="Subject" />
-      <textarea cols="30" rows="10" placeholder="Message"></textarea>
-      <Button text="SEND MESSAGE" />
+      <textarea cols="30" rows="10" placeholder="Message" name="massage"></textarea>
+      <input type="submit"  value="SEND MASSAGE" />
     </form>
   </div>
-);
+)};
 
 const styles = css`
   width: 100%;
@@ -52,6 +73,7 @@ const styles = css`
     textarea {
       width: 100%;
     }
+    
   }
   @media (max-width: 1200px) {
     padding: 80px 30px;
