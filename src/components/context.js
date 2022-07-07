@@ -3,6 +3,7 @@ import axios from "axios";
 const Context = React.createContext({
   submit: (event) => {},
   value: () => {},
+  isLoggedIn:false
 });
 export const ContextApi = (props) => {
   const [data, setFormValue] = useState({
@@ -10,6 +11,7 @@ export const ContextApi = (props) => {
     email: null,
     password: null,
   });
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
   window.axios = require("axios");
   const Submit = (event) => {
     event.preventDefault();
@@ -32,6 +34,8 @@ export const ContextApi = (props) => {
         data:data,
         submit: Submit,
         value: valueHandler,
+        isLoggedIn:isLoggedIn,
+        setIsLoggedIn:setIsLoggedIn
       }}
     >
       {props.children}

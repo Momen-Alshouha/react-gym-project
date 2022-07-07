@@ -17,14 +17,14 @@ import Profile from "./components/Profile/Profile";
 const App = () => (
   <div className="App">
     
-      {/* <Main />
+      <Main />
       <GymProgram />
       <Member />
       <Classes />
       <Schedule />
       <Trainers />
-      <Contact /> */}
-    <Profile />
+      <Contact />
+    {/* <Profile /> */}
   </div>
 );
 

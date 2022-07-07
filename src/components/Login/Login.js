@@ -6,7 +6,7 @@ import axios from "axios";
 function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-  
+  const ctx = useContext(Context);
   const emailHandler = (event) => {
     console.log(event.target.value);
     setEmail(event.target.value);
@@ -21,12 +21,13 @@ function Login() {
   axios
   .get("https://62c54cf0134fa108c24dabbc.mockapi.io/user")
   .then(function (response) {
-    console.log(response.data );
-    for (let i = 0; i < 10; i++) {
+    const dataLength = response.data;
+    for (let i = 0; i < dataLength.length ; i++) {
       if (
         response.data[i].email !== email &&
         response.data[i].password !== password
       ) {
+        ctx.setIsLoggedIn(false);
         setEmail('');
         setPassword('');
       }
@@ -35,7 +36,9 @@ function Login() {
           setPassword('');
           console.log('l')
         } else {
-         window.location.href="/";
+          ctx.setIsLoggedIn(true);
+          localStorage.setItem('id',response.data[i].id);
+          window.location.href="/";
         }
       }
     }
