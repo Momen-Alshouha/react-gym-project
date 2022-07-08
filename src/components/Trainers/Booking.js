@@ -26,7 +26,7 @@ const userId = JSON.parse(localStorage.getItem('id'));
      nineMonth
     })
     if(choose==oneMonth||threeMonth||nineMonth){
-    window.alert('Booking Done Successfully');
+    // window.alert('Booking Done Successfully');
   }}
   else {
     window.alert('Please Login To Complete Your Reservation');

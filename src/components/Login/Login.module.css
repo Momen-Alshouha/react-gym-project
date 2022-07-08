@@ -102,6 +102,18 @@
   background-color: #ffa99a;
   color: black;
 }
+.NavLink {
+  text-decoration: none;
+  color: white;
+  background-color: #ed563b;
+  padding: 15px 25px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.NavLink:hover {
+  background-color: #ffa99a;
+  color: black;
+}
 .parent input:focus {
   background: none;
   padding: 10px;
