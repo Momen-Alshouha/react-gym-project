@@ -118,3 +118,144 @@
 ::-webkit-input-placeholder {
   color: rgba(97, 97, 97, 0.457);
 }
+
+@media screen and (min-width: 794px) and (max-width: 1078px) {
+  .container::after {
+    transform: skewY(-45deg);
+  }
+  .title {
+    margin-left: -2rem;
+  }
+  .parent {
+    transform: translate(90%, 30%);
+  }
+  .aside {
+    transform: translate(10%, 7%);
+  }
+}
+@media screen and (min-width: 590px) and (max-width: 789px) {
+  .container::after {
+    transform: skewY(-50deg);
+  }
+  .title {
+    margin-left: 20rem;
+  }
+  .parent {
+    transform: translate(35%, 30%);
+  }
+  .aside {
+    display: none;
+  }
+}
+@media screen and (min-width: 486px) and (max-width: 589px) {
+  .container::after {
+    transform: skewY(-60deg);
+  }
+  .title {
+    margin-left: 20rem;
+  }
+  .parent {
+    transform: translate(15%, 30%);
+  }
+  .aside {
+    display: none;
+  }
+}
+@media screen and (min-width: 362px) and (max-width: 486px) {
+  .container::after {
+    transform: skewY(-60deg);
+  }
+  .title {
+    margin-left: 20rem;
+  }
+  .parent {
+    width: 330px;
+    height: 390px;
+    transform: translate(15%, 30%);
+  }
+  .aside {
+    display: none;
+  }
+  .parent button {
+    padding: 20px 40px;
+    width: 80%;
+    display: block;
+    border: none;
+    background: none;
+    border-radius: 40px;
+    font-weight: 700;
+    background-color: white;
+    color: rgb(24, 24, 104);
+    margin: 40px 0px 30px 40px;
+    transition: 0.3s;
+  }
+  .parent label {
+    margin-left: -40px;
+  }
+  .parent input {
+    flex-direction: column;
+    border: none;
+    background: none;
+    color: white;
+    border-bottom: 1px solid white;
+    margin-left: -40px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .anchor {
+    font-size: 12px;
+    padding-left: 50px;
+    color: #ed563b;
+    margin-top: 40px;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 290px) and (max-width: 361px) {
+  .container::after {
+    transform: skewY(-70deg);
+  }
+  .title {
+    margin-left: 20rem;
+  }
+  .parent {
+    width: 260px;
+    height: 390px;
+    transform: translate(5%, 30%);
+  }
+  .aside {
+    display: none;
+  }
+  .parent button {
+    padding: 20px 40px;
+    width: 90%;
+    display: block;
+    border: none;
+    background: none;
+    border-radius: 40px;
+    font-weight: 700;
+    background-color: white;
+    color: rgb(24, 24, 104);
+    margin: 40px 0px 20px 15px;
+    transition: 0.3s;
+  }
+  .parent label {
+    margin-left: -40px;
+  }
+  .parent input {
+    flex-direction: column;
+    border: none;
+    background: none;
+    color: white;
+    border-bottom: 1px solid white;
+    margin-left: -40px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .anchor {
+    font-size: 12px;
+    padding-left: 30px;
+    color: #ed563b;
+    margin-top: 40px;
+    text-decoration: none;
+  }
+}
