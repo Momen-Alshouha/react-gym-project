@@ -6,14 +6,31 @@ import TrainerCard from "./BookCard";
 import Container from "../GlobalComponents/Container";
  import Book from "../Image/book.jpg";
 import { useState} from 'react';
-import { useEffect} from 'react';
+import { useEffect, useContext} from 'react';
 import axios from 'axios';
+import Context from "../context";
 
 const Booking = () => {
 const oneMonth=1;
 const threeMonth=3;
 const nineMonth=9;
+const [choose, setChoose] = useState(0);
 
+const userId = JSON.parse(localStorage.getItem('id'));
+
+  if (userId != null) {
+    axios.post(`https://62c54d04134fa108c24dadca.mockapi.io/gymapi`, {
+     userId,
+     oneMonth,
+     threeMonth,
+     nineMonth
+    })
+    if(choose==oneMonth||threeMonth||nineMonth){
+    window.alert('Booking Done Successfully');
+  }}
+  else {
+    window.alert('Please Login To Complete Your Reservation');
+  }
 return(
   <section css={styles} className="trainers" id="trainers">
     <h2>

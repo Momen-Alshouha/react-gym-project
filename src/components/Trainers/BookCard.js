@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from "react";
+import Booking from "./Booking";
 import Socials from "./Socials";
 
 const TrainerCard = ({ title, name, desc, img,button }) => (
@@ -9,7 +10,7 @@ const TrainerCard = ({ title, name, desc, img,button }) => (
     <h3>{title}</h3>
     <h3>{name}</h3>
     <p>{desc}</p>
-   <button class="btn css-12kt7ua-Button">Book Now</button>
+   <button class="btn css-12kt7ua-Button" onClick={Booking}>Book Now</button>
   </div>
 );
 
