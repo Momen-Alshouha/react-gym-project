@@ -2,19 +2,16 @@ import React, { Fragment,useContext,useState } from "react";
 import classes from "./Login.module.css";
 import Context from "../context";
 import axios from "axios";
-
 function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const ctx = useContext(Context);
- console.log(ctx.isLoggedIn);
   const emailHandler = (event) => {
     console.log(event.target.value);
     setEmail(event.target.value);
   }
   const passwordHandler = (event) => {
     console.log(event.target.value);
-
     setPassword(event.target.value);
   }
   const reqo = (e) => {
@@ -22,22 +19,21 @@ function Login() {
   axios
   .get("https://62c54cf0134fa108c24dabbc.mockapi.io/user")
   .then(function (response) {
-    const dataLength = response.data;
-    for (let i = 0; i < dataLength.length ; i++) {
+    for (let i = 0; i < 100 ; i++) {
       if (
         response.data[i].email !== email &&
         response.data[i].password !== password
       ) {
-        localStorage.setItem('id','');
+
+        ctx.setIsLoggedIn(false);
         setEmail('');
         setPassword('');
       }
       else if (response.data[i].email ===  email) {
         if (response.data[i].password !== password) {
           setPassword('');
-          localStorage.setItem('id','');
         } else {
-        
+          ctx.setIsLoggedIn(true);
           localStorage.setItem('id',response.data[i].id);
           window.location.href="/";
         }
@@ -69,7 +65,7 @@ function Login() {
               />
             </li>
           
-            <button>Log In</button>
+            <button onClick={ctx.onLogin}>Log In</button>
             <a href="" className={classes.anchor}>
               I'm already member
             </a>
