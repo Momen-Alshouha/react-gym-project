@@ -99,8 +99,8 @@
   transition: 0.3s;
 }
 .parent button:hover {
-  background-color: #ffa99a;
-  color: black;
+  background-color: #f56951;
+  color: white;
 }
 .NavLink {
   text-decoration: none;
@@ -111,8 +111,8 @@
   transition: 0.3s;
 }
 .NavLink:hover {
-  background-color: #ffa99a;
-  color: black;
+  background-color: #f56951;
+  color: white;
 }
 .parent input:focus {
   background: none;

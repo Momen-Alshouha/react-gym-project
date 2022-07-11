@@ -1,12 +1,13 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import Context from "../context";
-
+import ErrorModel from "../UI/ErrorModel";
 import classes from "./Register.module.css";
 const Register = () => {
   const ctx = useContext(Context);
   return (
     <Fragment>
+      {/* <ErrorModel title="ssss" message="ddddddddddd" /> */}
       <div className={classes.container}>
         <div className={classes.aside}>
           <h1 className={classes.title}>REGISTER</h1>

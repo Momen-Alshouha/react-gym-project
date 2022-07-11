@@ -48,7 +48,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   border-radius: 20px;
-  z-index: 200;
+  z-index: 20;
   box-shadow: 1px 1px 9px -2px black;
 }
 .aside {
@@ -63,7 +63,7 @@
   background-position-x: 10%;
   background-size: contain;
   border-radius: 20px;
-  z-index: 100;
+  z-index: 10;
   box-shadow: 1px 1px 9px -2px #1d1d1b;
 }
 .parent li {

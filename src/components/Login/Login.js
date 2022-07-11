@@ -2,9 +2,11 @@ import React, { Fragment,useContext,useState } from "react";
 import classes from "./Login.module.css";
 import Context from "../context";
 import axios from "axios";
+import ErrorModel from "../UI/ErrorModel";
 function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  const [error,setError] = useState('');
   const ctx = useContext(Context);
   const emailHandler = (event) => {
     console.log(event.target.value);
@@ -28,6 +30,10 @@ function Login() {
         ctx.setIsLoggedIn(false);
         setEmail('');
         setPassword('');
+        setError({
+          title:'Invalid input',
+          message:'Please enter a valid email or password'
+        })
       }
       else if (response.data[i].email ===  email) {
         if (response.data[i].password !== password) {
@@ -43,6 +49,7 @@ function Login() {
 }
     return (
         <Fragment>
+          {error && <ErrorModel title={error.title} message={error.message} />}
       <div className={classes.container}>
         <div className={classes.aside}>
           <h1 className={classes.title}>LOG IN</h1>
@@ -67,7 +74,7 @@ function Login() {
           
             <button onClick={ctx.onLogin}>Log In</button>
             <a href="" className={classes.anchor}>
-              I'm already member
+             New to us? Sign Up
             </a>
           </form>
         </ul>
