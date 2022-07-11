@@ -21,6 +21,7 @@ const LinksContainer = (props,{ hidden }) => {
       <Link name="CLASSES" linkTo="#ourClasses" />
       <Link name="SCHEDULES" linkTo="#schedule" />
       <Link name="CONTACT" linkTo="#contact" />
+      {localStorage.getItem('isLoggedIn') != '1' && <NavLink onClick={logoutHandler} to="/register" className={classes.NavLink}>Signup</NavLink>}
       {localStorage.getItem('isLoggedIn') == '1' && <NavLink onClick={logoutHandler} to="/" className={classes.NavLink}>Logout</NavLink>}
       {localStorage.getItem('isLoggedIn') != '1' && <NavLink onClick={logoutHandler} to="/Login" className={classes.NavLink}>Signin</NavLink>}
     </div>

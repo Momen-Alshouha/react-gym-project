@@ -15,27 +15,27 @@ const GymProgram = () => (
     <Container>
       <GymProgramCard
         title="Basic Fitness"
-        desc="Please do not re-distribute this template ZIP file on any template collection website. This is not allowed."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
       <GymProgramCard
         title="Advanced Muscle Course"
-        desc="You may want to browse through Digital Marketing or Corporate HTML CSS templates on our website."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
       <GymProgramCard
         title="New Gym Training"
-        desc="If you wish to support TemplateMo website via PayPal, please feel free to contact us. We appreciate it a lot."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
       <GymProgramCard
         title="Yoga Training"
-        desc="This template is built on Bootstrap v4.3.1 framework. It is easy to adapt the columns and sections."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
       <GymProgramCard
         title="Basic Muscle Course"
-        desc="Credit goes to Pexels website for images and video background used in this HTML template."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
       <GymProgramCard
         title="Body Building Course"
-        desc="Suspendisse fringilla et nisi et mattis. Curabitur sed finibus nisi. Integer nibh sapien, vehicula et auctor."
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet erat interdum, convallis lorem sit amet, mattis neque. Vivamus in mauris augue."
       />
     </Container>
   </div>
