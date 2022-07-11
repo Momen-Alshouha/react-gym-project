@@ -34,7 +34,7 @@ const userId = JSON.parse(localStorage.getItem('id'));
 return(
   <section css={styles} className="trainers" id="trainers">
     <h2>
-      EXPERT <span>TRAINERS</span>
+      OUR <span>PLANS</span>
     </h2>
     <Icon />
     <p>
