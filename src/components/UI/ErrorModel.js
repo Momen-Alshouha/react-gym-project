@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './ErrorModel.module.css';
 const ErrorModel = (props) => {
     return(
-        <div className={classes.backdrop}>
+        <div className={classes.backdrop} onClick={props.click}>
         <div className={classes.parent}>
             <header className={classes.header}>
                 <h2>
@@ -13,7 +13,7 @@ const ErrorModel = (props) => {
                 <p>{props.message}</p>
             </div>
             <footer className={classes.actions}>
-               <button className={classes.button}>Okay</button>
+               <button className={classes.button} onClick={props.click}>Okay</button>
             </footer>
         </div>
         </div>

@@ -16,40 +16,54 @@ function Login() {
     console.log(event.target.value);
     setPassword(event.target.value);
   }
+  const setErrorHandler = () => {
+    setError(null);
+  }
   const reqo = (e) => {
     e.preventDefault();
+    if(email.trim().length === 0 || password.trim().length === 0){
+      ctx.setIsLoggedIn(false);
+      setError({
+        title:'Invalid input',
+        message:'Please enter a valid Email and Password'
+      })
+    }else{
   axios
   .get("https://62c54cf0134fa108c24dabbc.mockapi.io/user")
   .then(function (response) {
     for (let i = 0; i < 100 ; i++) {
-      if (
-        response.data[i].email !== email &&
-        response.data[i].password !== password
-      ) {
-
+      if((response.data[i]?.email ===  email) && (response.data[i]?.password !== password)) {
         ctx.setIsLoggedIn(false);
-        setEmail('');
-        setPassword('');
         setError({
           title:'Invalid input',
-          message:'Please enter a valid email or password'
+          message:'Please enter a valid password'
         })
+        setPassword('');
       }
-      else if (response.data[i].email ===  email) {
-        if (response.data[i].password !== password) {
-          setPassword('');
-        } else {
+      if((response.data[i]?.email !==  email) && (response.data[i]?.password === password)) {
+        ctx.setIsLoggedIn(false);
+        setError({
+          title:'Invalid input',
+          message:'Please enter a valid email'
+        })
+        setEmail('');
+      }
+
+      if(       
+        response.data[i]?.email === email &&
+        response.data[i]?.password === password){
           ctx.setIsLoggedIn(true);
           localStorage.setItem('id',response.data[i].id);
           window.location.href="/";
         }
       }
     }
-  });
+  );
 }
+  }
     return (
         <Fragment>
-          {error && <ErrorModel title={error.title} message={error.message} />}
+          {error && <ErrorModel title={error.title} message={error.message} click={setErrorHandler}/>}
       <div className={classes.container}>
         <div className={classes.aside}>
           <h1 className={classes.title}>LOG IN</h1>
