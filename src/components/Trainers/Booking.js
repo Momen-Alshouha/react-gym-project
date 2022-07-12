@@ -4,7 +4,7 @@ import React from "react";
 import Icon from "../GlobalComponents/Icon";
 import TrainerCard from "./BookCard";
 import Container from "../GlobalComponents/Container";
-import Book from "../Image/book.jpg";
+import Book from "../Image/book1.jpg";
 import { useState } from "react";
 import { useEffect, useContext } from "react";
 import axios from "axios";
@@ -14,34 +14,40 @@ const Booking = (props) => {
   return (
     <section css={styles} className="trainers" id="trainers">
       <h2>
-        OUR <span>PLANS</span>
+        OUR <span>PRICING</span>
       </h2>
       <Icon />
       <p>
-        BUILD UP YOUR BODY SHAPE
+      We offer a range of membership options designed to help you reach your fitness goals 
         <br />
-        Build Your Body and Fitness with Professional Touch
+        with an emphasis on individual programs.
       </p>
       <Container>
         <TrainerCard
           id="1"
           title="One Month"
           name="45$/ Mon"
-          desc="Locker + Bathroom "
+          desc="Trainer Advice 
+          Locker + Bathroom
+          Personal trainer"
           img={Book}
         />
         <TrainerCard
           id="2"
           title="Three Months"
           name="90$/Mon"
-          desc="Locker + Bathroom ."
+          desc="Trainer Advice 
+          Locker + Bathroom
+          Personal trainer"
           img={Book}
         />
         <TrainerCard
           id="3"
           title="Nine Months"
           name="130$/Mon"
-          desc="Locker + Bathroom "
+          desc="Trainer Advice
+          Locker + Bathroom
+          Personal trainer "
           img={Book}
         />
       </Container>

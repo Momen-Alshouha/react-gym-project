@@ -3,9 +3,9 @@ import { jsx, css } from "@emotion/core";
 import React from "react";
 import Output from "./Output";
 import ClassOneBg from "../Image/classOne.jpg";
-import ClassTwoBg from "../Image/classTwo.jpg";
+import Class from "../Image/class.jpg";
 import ClassThreeBg from "../Image/classThree.jpg";
-import ClassFourBg from "../Image/classFour.jpg";
+import rave from "../Image/rave.jpg";
 
 const Results = ({ training }) => (
   <div css={styles} className="results">
@@ -21,7 +21,7 @@ const Results = ({ training }) => (
       <Output
         title="Second Training Class"
         info="Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-        img={ClassTwoBg}
+        img={Class}
       />
     )}
     {training === "ThirdClass" && (
@@ -36,7 +36,7 @@ const Results = ({ training }) => (
       <Output
         title="Fourth Training Class"
         info="Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum commodo et."
-        img={ClassFourBg}
+        img={rave}
       />
     )}
   </div>
@@ -45,6 +45,7 @@ const Results = ({ training }) => (
 const styles = css`
   width: 100%;
   max-width: 60%;
+  
   .test {
     width: 100%;
     height: 400px;
@@ -53,6 +54,7 @@ const styles = css`
       background: blue;
     }
   }
+ 
   @media(max-width: 900px){
     max-width: 590px;
     padding: 30px 0 0 0;

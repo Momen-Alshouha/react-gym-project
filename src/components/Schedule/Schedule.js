@@ -2,7 +2,7 @@
 import { jsx, css } from "@emotion/core";
 import React, { useState } from "react";
 import Icon from "../GlobalComponents/Icon";
-import scheduleBg from "../Image/scheduleBg.jpg";
+import istock from "../Image/istock.jpg";
 import ScheduleLinks from "./ScheduleLinks";
 import Table from "./Table";
 import Container from "../GlobalComponents/Container";
@@ -35,7 +35,7 @@ const styles = css`
   padding: 120px 0;
   min-height: 100vh;
   text-align: center;
-  background: url('${scheduleBg}') no-repeat center/cover;
+  background: url('${istock}') no-repeat center/100% 90%;
   h2 {
     color: #fff;
     font-weight: 900;

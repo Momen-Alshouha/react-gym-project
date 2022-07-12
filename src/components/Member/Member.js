@@ -3,18 +3,20 @@ import { jsx, css } from "@emotion/core";
 import React from "react";
 import Button from "../GlobalComponents/Button";
 import GymOverlayBg from "../Image/gymOverlayBg.jpg";
-
+import {Link} from 'react-router-dom';
 const Member = ({ text }) => (
   <section css={styles} className="member">
     <h2>
       DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
     </h2>
     <p>
-      Ut consectetur, metus sit amet aliquet placerat, enim est ultricies
-      ligula, sit amet dapibus odio augue eget libero.
-      <br /> Morbi tempus mauris a nisi luctus imperdiet.
+    BUILD UP YOUR BODY SHAPE
+
+      <br /> Build Your Body and Fitness with Professional Touch.
     </p>
-    <Button text="BECOME A MEMBER" />
+    <Link to="/Login">
+    <Button text="BECOME A MEMBER"  />
+    </Link>
   </section>
 );
 

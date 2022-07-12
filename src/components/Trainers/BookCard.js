@@ -59,7 +59,7 @@ const TrainerCard = (props,{ title, name, desc, img,button }) => {
   <div css={styles} className="card">
 
     <img src={props.img} alt="trainer" />
-    <h3>{props.title}</h3>
+    <h5>{props.title}</h5>
     <h3>{props.name}</h3>
     <p>{props.desc}</p>
    <button class="btn css-12kt7ua-Button" onClick={bookingHandler}>Book Now</button>
@@ -76,15 +76,21 @@ const styles = css`
   text-align: left;
   border-radius: 4px;
   img {
-    width: 100%;
+   
+    width:108%;
+    height:330px;
   }
   h5 {
     color: #ed563b;
     margin: 26px 0 9px 0;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 20px;
+    text-align:center;
+    margin-top:5%;
   }
   h3 {
+    text-align:center;
+    margin-top:5%;
     color: #232d39;
     letter-spacing: 1px;
   }
@@ -105,6 +111,7 @@ const styles = css`
     font-size: 15px;
     font-weight: 400;
     line-height: 1.7;
+    text-align:center;
   }
   @media (max-width: 830px) {
     max-width: 540px;
