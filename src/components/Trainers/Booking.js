@@ -4,69 +4,50 @@ import React from "react";
 import Icon from "../GlobalComponents/Icon";
 import TrainerCard from "./BookCard";
 import Container from "../GlobalComponents/Container";
- import Book from "../Image/book.jpg";
-import { useState} from 'react';
-import { useEffect, useContext} from 'react';
-import axios from 'axios';
+import Book from "../Image/book.jpg";
+import { useState } from "react";
+import { useEffect, useContext } from "react";
+import axios from "axios";
 import Context from "../context";
 
-const Booking = () => {
-const oneMonth=1;
-const threeMonth=3;
-const nineMonth=9;
-const [choose, setChoose] = useState(0);
-
-const userId = JSON.parse(localStorage.getItem('id'));
-
-  if (userId != null) {
-    axios.post(`https://62c54d04134fa108c24dadca.mockapi.io/gymapi`, {
-     userId,
-     oneMonth,
-     threeMonth,
-     nineMonth
-    })
-    if(choose==oneMonth||threeMonth||nineMonth){
-    // window.alert('Booking Done Successfully');
-  }}
-  else {
-    // window.alert('Please Login To Complete Your Reservation');
-  }
-return(
-  <section css={styles} className="trainers" id="trainers">
-    <h2>
-      OUR <span>PLANS</span>
-    </h2>
-    <Icon />
-    <p>
-    BUILD UP YOUR BODY SHAPE
-      <br />
-      Build Your Body and Fitness with Professional Touch
-
-    </p>
-    <Container>
-      <TrainerCard
-        title="One Month"
-        name="45$/ Mon"
-        desc="Locker + Bathroom "
-        img={Book}
-        
-      />
-      <TrainerCard
-        title="Three Months"
-        name="90$/Mon"
-        desc="Locker + Bathroom ."
-        img={Book}
-      />
-      <TrainerCard
-        title="Nine Months"
-        name="130$/Mon"
-        desc="Locker + Bathroom "
-        img={Book}
-      />
-    </Container>
-  </section>
-);
-}
+const Booking = (props) => {
+  return (
+    <section css={styles} className="trainers" id="trainers">
+      <h2>
+        OUR <span>PLANS</span>
+      </h2>
+      <Icon />
+      <p>
+        BUILD UP YOUR BODY SHAPE
+        <br />
+        Build Your Body and Fitness with Professional Touch
+      </p>
+      <Container>
+        <TrainerCard
+          id="1"
+          title="One Month"
+          name="45$/ Mon"
+          desc="Locker + Bathroom "
+          img={Book}
+        />
+        <TrainerCard
+          id="2"
+          title="Three Months"
+          name="90$/Mon"
+          desc="Locker + Bathroom ."
+          img={Book}
+        />
+        <TrainerCard
+          id="3"
+          title="Nine Months"
+          name="130$/Mon"
+          desc="Locker + Bathroom "
+          img={Book}
+        />
+      </Container>
+    </section>
+  );
+};
 
 const styles = css`
   width: 100%;

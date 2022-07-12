@@ -33,6 +33,12 @@ function Login() {
   .get("https://62c54cf0134fa108c24dabbc.mockapi.io/user")
   .then(function (response) {
     for (let i = 0; i < 100 ; i++) {
+      if(       
+        response.data[i]?.email === email &&
+        response.data[i]?.password === password){
+          ctx.setIsLoggedIn(true);
+          localStorage.setItem('id',response.data[i].id);
+        }
       if((response.data[i]?.email ===  email) && (response.data[i]?.password !== password)) {
         ctx.setIsLoggedIn(false);
         setError({
@@ -49,13 +55,6 @@ function Login() {
         })
         setEmail('');
       }
-
-      if(       
-        response.data[i]?.email === email &&
-        response.data[i]?.password === password){
-          ctx.setIsLoggedIn(true);
-          localStorage.setItem('id',response.data[i].id);
-        }
       }
     }
   );

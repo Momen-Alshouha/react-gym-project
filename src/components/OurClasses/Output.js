@@ -29,7 +29,9 @@ const styles = css`
     margin: 20px 0;
   }
   .btn {
-    padding: 14px 26px;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 30px;
   }
   @media(max-width: 900px){
     img{

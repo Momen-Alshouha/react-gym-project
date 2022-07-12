@@ -1,18 +1,71 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+import React, { useEffect } from "react";
 import Booking from "./Booking";
 import Socials from "./Socials";
+import axios from "axios";
+import { useState } from "react";
+const TrainerCard = (props,{ title, name, desc, img,button }) => {
+  const oneMonth = 1;
+  const threeMonth = 3;
+  const nineMonth = 9;
+  const userId = JSON.parse(localStorage.getItem("id"));
+  const [choose, setChoose] = useState({userId,
+    oneMonth,
+    threeMonth,
+    nineMonth,});
+  // if(props.id == oneMonth){
+  //   setChoose({userId,
+  //     oneMonth,
+  //     threeMonth:null,
+  //     nineMonth:null,})
+  // }
+  useEffect(()=>{
+    if(props.id === '1'){
+      setChoose(
+        {userId,
+          oneMonth,
+          threeMonth:null,
+          nineMonth:null,
+      })
+    }
+    if(props.id === '2'){
+      setChoose(
+        {userId,
+          oneMonth:null,
+          threeMonth,
+          nineMonth:null,
+      })
+    }
+    if(props.id === '3'){
+      setChoose(
+        {userId,
+          oneMonth:null,
+          threeMonth:null,
+          nineMonth,
+      })
+    }
 
-const TrainerCard = ({ title, name, desc, img,button }) => (
+  },[])
+  const bookingHandler = () => {
+    if (userId) {
+        axios.post(`https://62c54d04134fa108c24dadca.mockapi.io/gymapi`,choose);
+      window.alert("Booking Done Successfully");
+    } else {
+      window.alert("Please Login To Complete Your Reservation");
+    }
+  };
+  return(
   <div css={styles} className="card">
-    <img src={img} alt="trainer" />
-    <h3>{title}</h3>
-    <h3>{name}</h3>
-    <p>{desc}</p>
-   <button class="btn css-12kt7ua-Button" onClick={Booking}>Book Now</button>
+
+    <img src={props.img} alt="trainer" />
+    <h3>{props.title}</h3>
+    <h3>{props.name}</h3>
+    <p>{props.desc}</p>
+   <button class="btn css-12kt7ua-Button" onClick={bookingHandler}>Book Now</button>
   </div>
-);
+  )
+};
 
 const styles = css`
   width: 100%;
@@ -38,6 +91,13 @@ const styles = css`
   button{
     color: white;
     background:#ed563b ;
+    padding: 20px 100px;
+    border: none;
+    border-radius: 30px;
+    transition:0.3s
+  }
+  button:hover{
+    background: #f9735b;
   }
   p {
     margin: 24px 0 28px 0;

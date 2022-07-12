@@ -14,7 +14,9 @@ const styles = css`
   background: #ed563b;
   color: #fff;
   font-size: 14px;
-  padding: 12px 14px;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 30px;
   transition: background 500ms ease-in-out;
   &:hover {
     background: #f9735b;
