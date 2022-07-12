@@ -99,8 +99,8 @@
   transition: 0.3s;
 }
 .parent button:hover {
-  background-color: #f56951;
-  color: white;
+  background-color: #ffa99a;
+  color: black;
 }
 .NavLink {
   text-decoration: none;
@@ -126,6 +126,10 @@
   color: #ed563b;
   margin-top: 40px;
   text-decoration: none;
+  transition: 0.3s;
+}
+.anchor:hover {
+  color: white;
 }
 ::-webkit-input-placeholder {
   color: rgba(97, 97, 97, 0.457);

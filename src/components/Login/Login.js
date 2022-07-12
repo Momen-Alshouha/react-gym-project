@@ -3,6 +3,7 @@ import classes from "./Login.module.css";
 import Context from "../context";
 import axios from "axios";
 import ErrorModel from "../UI/ErrorModel";
+import { Link } from "react-router-dom";
 function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
@@ -54,7 +55,6 @@ function Login() {
         response.data[i]?.password === password){
           ctx.setIsLoggedIn(true);
           localStorage.setItem('id',response.data[i].id);
-          window.location.href="/";
         }
       }
     }
@@ -86,10 +86,17 @@ function Login() {
               />
             </li>
           
-            <button onClick={ctx.onLogin}>Log In</button>
-            <a href="" className={classes.anchor}>
-             New to us? Sign Up
-            </a>
+            <button onClick={ctx.onLogin}>
+            <Link
+                to={{
+                  pathname: `/`,
+                }}
+                style={{ textDecoration: "none", color: "#182434" }}
+              >
+                Log In
+              </Link>
+             </button>
+            <Link to={{pathname : `/Register`}} className={classes.anchor}>New to us? Sign Up</Link>
           </form>
         </ul>
       </div>

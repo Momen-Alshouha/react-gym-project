@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './ErrorModel.module.css';
 const ErrorModel = (props) => {
+    
     return(
         <div className={classes.backdrop} onClick={props.click}>
         <div className={classes.parent}>

@@ -5,12 +5,21 @@ import ErrorModel from "../UI/ErrorModel";
 import classes from "./Register.module.css";
 const Register = () => {
   const ctx = useContext(Context);
+  const ErrorHandler = () => {
+    ctx.setError(null);
+  };
   return (
     <Fragment>
-      {/* <ErrorModel title="ssss" message="ddddddddddd" /> */}
+      {ctx.error && (
+        <ErrorModel
+          title={ctx.error.title}
+          message={ctx.error.message}
+          click={ErrorHandler}
+        />
+      )}
       <div className={classes.container}>
         <div className={classes.aside}>
-          <h1 className={classes.title}>REGISTER</h1>
+          <h1 className={classes.title}>Signup</h1>
         </div>
         <ul className={classes.parent}>
           <form onSubmit={ctx.submit}>
@@ -47,28 +56,24 @@ const Register = () => {
                 placeholder="Write Password Here"
               />
             </li>
-            <li>
-              <label htmlFor="Confirmpassword">CONFIRM PASSWORD</label>
-              <br />
-              <input
-                type="password"
-                id="Confirmpassword"
-                placeholder="Confirm Your Password"
-              />
-            </li>
             <button>
               <Link
                 to={{
-                  pathname: `/`,
+                  pathname: `/Login`,
                 }}
                 style={{ textDecoration: "none", color: "#182434" }}
               >
-                Register
+                Signup
               </Link>
             </button>
-            <a href="" className={classes.anchor}>
+            <Link
+              className={classes.anchor}
+              to={{
+                pathname: `/Login`,
+              }}
+            >
               already member? login
-            </a>
+            </Link>
           </form>
         </ul>
       </div>

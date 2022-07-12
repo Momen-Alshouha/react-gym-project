@@ -42,7 +42,7 @@
 .parent {
   background-image: var(--main-color2);
   width: 410px;
-  height: 450px;
+  height: 420px;
   transform: translate(180%, 20%);
   display: flex;
   flex-direction: column;
@@ -114,6 +114,10 @@
   color: #ed563b;
   margin-top: 40px;
   text-decoration: none;
+  transition: 0.3s;
+}
+.anchor:hover {
+  color: white;
 }
 ::-webkit-input-placeholder {
   color: rgba(97, 97, 97, 0.457);
