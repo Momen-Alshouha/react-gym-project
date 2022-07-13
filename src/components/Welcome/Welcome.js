@@ -4,18 +4,19 @@ import React from "react";
 import Button from "../GlobalComponents/Button";
 import GymOverlayBg from "../Image/gymOverlayBg.jpg";
 import {Link} from 'react-router-dom';
-const Member = ({ text }) => (
-  <section css={styles} className="member">
+const Welcome = ({ text }) => (
+    <section css={styles} className="member">
     <h2>
-       <span>About Us</span>
+      DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
     </h2>
     <p style={{fontSize:"20px"}}>
-      We Are Your Best Choice, Our GYM containing special equipment, where people go to do physical exercise and get fit. We offers a variety of exercise equipment and weights going up to 100 pounds.
-    BUILD UP YOUR BODY SHAPE.
+    BUILD UP YOUR BODY SHAPE
 
       <br /> Build Your Body and Fitness with Professional Touch.
     </p>
-    
+    <Link to="/Login">
+    <Button text="BECOME A MEMBER"  />
+    </Link>
   </section>
 );
 
@@ -53,4 +54,4 @@ const styles = css`
   }
 `;
 
-export default Member;
+export default Welcome;
