@@ -7,10 +7,11 @@ import {Link} from 'react-router-dom';
 const Member = ({ text }) => (
   <section css={styles} className="member">
     <h2>
-      DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
+       <span>About Us</span>
     </h2>
     <p>
-    BUILD UP YOUR BODY SHAPE
+      We Are Your Best Choice, Our GYM containing special equipment, where people go to do physical exercise and get fit. We offers a variety of exercise equipment and weights going up to 100 pounds.
+    BUILD UP YOUR BODY SHAPE.
 
       <br /> Build Your Body and Fitness with Professional Touch.
     </p>
