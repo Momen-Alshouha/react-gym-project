@@ -12,7 +12,7 @@ import Profile from "./components/Profile/Profile";
 // import Login from "./components/Login/Login";
 import Welcome from "./components/Welcome/Welcome";
 // import Register from "./components/Register/Register";
-import SimpleImageSlider from "react-simple-image-slider";
+import SimpleImageSlider from "react-simple-image-slider"; // npm install react-simple-image-slider --save
 
 const images = [
   { url: "https://images.unsplash.com/photo-1561214078-f3247647fc5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" },
