@@ -13,7 +13,7 @@ const Member = ({ text }) => (
       We Are Your Best Choice, Our GYM containing special equipment, where people go to do physical exercise and get fit. We offers a variety of exercise equipment and weights going up to 100 pounds.
     BUILD UP YOUR BODY SHAPE.
 
-      <br /> Build Your Body and Fitness with Professional Touch.
+      <br /> <h2><span>Build Your Body and Fitness with Professional Touch.</span></h2>
     </p>
     
   </section>

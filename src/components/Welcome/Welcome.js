@@ -10,9 +10,12 @@ const Welcome = ({ text }) => (
       DON’T <span>THINK</span>, BEGIN <span>TODAY</span>!
     </h2>
     <p style={{fontSize:"20px"}}>
-    BUILD UP YOUR BODY SHAPE
 
-      <br /> Build Your Body and Fitness with Professional Touch.
+      <br />
+      <h2>
+      <span>    BUILD UP YOUR BODY SHAPE</span><br />
+      <span>Build Your Body and Fitness with Professional Touch.</span>
+    </h2> 
     </p>
     <Link to="/Login">
     <Button text="BECOME A MEMBER"  />
