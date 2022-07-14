@@ -4,10 +4,7 @@ import { jsx, css } from "@emotion/core";
 
 const Map = () => (
   <div css={styles} className="mapouter">
-    <iframe
-      id="gmap_canvas"
-      src="https://maps.google.com/maps?q=Av.%20L%C3%BAcio%20Costa&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    ></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d54149.64658256261!2d35.89311894459144!3d31.978447292291666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1siframe%20jordan!5e0!3m2!1sen!2sjo!4v1657188428237!5m2!1sen!2sjo" width="600" height="450"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 );
 

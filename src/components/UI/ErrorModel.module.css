@@ -1,0 +1,87 @@
+:root {
+  --main-color1: linear-gradient(225deg, #90e0ef 0%, #ade8f4 100%);
+  --main-color2: linear-gradient(to top, #182434 1%, #2b2b4e 100%);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 30;
+  background: #182434d4;
+}
+/* .backdrop::after {
+  content: "";
+  position: fixed;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #ec573d55;
+  transform: skewY(-25deg);
+  box-shadow: 0px 0px 20px 0px black;
+  transform-origin: top left;
+} */
+.parent {
+  width: 30%;
+  height: 200px;
+  margin: 250px auto;
+  border-radius: 30px;
+  background-image: var(--main-color2);
+  box-shadow: 0px 0px 10px 0px black;
+}
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 10%;
+  width: 10%;
+  display: flex;
+  text-align: center;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.header {
+  padding: 1rem;
+  background-color: #ed563b;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--main-color2);
+}
+
+.content {
+  padding: 1rem;
+  color: #ffffff;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.button {
+  background: none;
+  padding: 15px 30px;
+  border: none;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: white;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: #f56951;
+  color: white;
+}
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}

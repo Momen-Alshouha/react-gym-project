@@ -1,34 +1,28 @@
-import React, { Fragment, useState } from "react";
-import axios from "axios";
+import React, { Fragment, useContext } from "react";
+import { Link } from "react-router-dom";
+import Context from "../context";
+import ErrorModel from "../UI/ErrorModel";
 import classes from "./Register.module.css";
 const Register = () => {
-  const [data, setFormValue] = useState({
-    name: null,
-    email: null,
-    password: null,
-  });
-  window.axios = require("axios");
-
-  const Submit = (event) => {
-    event.preventDefault();
-    const api = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    };
-    axios.post("https://62c54cf0134fa108c24dabbc.mockapi.io/user", api);
-  };
-  const valueHandler = (event) => {
-    setFormValue({ ...data, [event.target.name]: event.target.value });
+  const ctx = useContext(Context);
+  const ErrorHandler = () => {
+    ctx.setError(null);
   };
   return (
     <Fragment>
+      {ctx.error && (
+        <ErrorModel
+          title={ctx.error.title}
+          message={ctx.error.message}
+          click={ErrorHandler}
+        />
+      )}
       <div className={classes.container}>
         <div className={classes.aside}>
-          <h1 className={classes.title}>REGISTER</h1>
+          <h1 className={classes.title}>Signup</h1>
         </div>
         <ul className={classes.parent}>
-          <form onSubmit={Submit}>
+          <form onSubmit={ctx.submit}>
             <li>
               <label htmlFor="NAME">NAME</label>
               <br />
@@ -37,7 +31,7 @@ const Register = () => {
                 id="NAME"
                 name="name"
                 placeholder="Write Email Here"
-                onChange={valueHandler}
+                onChange={ctx.value}
               />
             </li>
             <li>
@@ -47,7 +41,7 @@ const Register = () => {
                 type="email"
                 id="Email"
                 name="email"
-                onChange={valueHandler}
+                onChange={ctx.value}
                 placeholder="Write Email Here"
               />
             </li>
@@ -58,23 +52,28 @@ const Register = () => {
                 type="password"
                 id="password"
                 name="password"
-                onChange={valueHandler}
+                onChange={ctx.value}
                 placeholder="Write Password Here"
               />
             </li>
-            <li>
-              <label htmlFor="Confirmpassword">CONFIRM PASSWORD</label>
-              <br />
-              <input
-                type="password"
-                id="Confirmpassword"
-                placeholder="Confirm Your Password"
-              />
-            </li>
-            <button>Register</button>
-            <a href="" className={classes.anchor}>
-              I'm already member
-            </a>
+            <button>
+              <Link
+                to={{
+                  pathname: `/Login`,
+                }}
+                style={{ textDecoration: "none", color: "#182434" }}
+              >
+                Signup
+              </Link>
+            </button>
+            <Link
+              className={classes.anchor}
+              to={{
+                pathname: `/Login`,
+              }}
+            >
+              already member? login
+            </Link>
           </form>
         </ul>
       </div>

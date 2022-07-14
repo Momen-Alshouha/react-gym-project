@@ -2,10 +2,10 @@
 import { jsx, css } from "@emotion/core";
 import React from "react";
 import Button from "../GlobalComponents/Button";
-
+import {Link} from 'react-router-dom';
 const Output = ({ title, info, img }) => (
   <div css={styles} className="output">
-    <img src={img} alt="class" />
+    <img src={img} alt="class" style={{height:'270px'}} />
     <h2>{title}</h2>
     <p>{info}</p>
     <Button text="VIEW SCHEDULE" />
@@ -29,7 +29,9 @@ const styles = css`
     margin: 20px 0;
   }
   .btn {
-    padding: 14px 26px;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 30px;
   }
   @media(max-width: 900px){
     img{

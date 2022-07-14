@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
 import React from "react";
-import Button from "../GlobalComponents/Button";
+import classes from './Form.module.css';
 import ContactBg from "../Image/contactBg.jpg";
 import emailjs from "@emailjs/browser";
 const Form = ({ text }) => {
@@ -32,7 +32,7 @@ const Form = ({ text }) => {
       <input type="text" placeholder="Your Email*" name="email"/>
       <input type="text" placeholder="Subject" />
       <textarea cols="30" rows="10" placeholder="Message" name="massage"></textarea>
-      <input type="submit"  value="SEND MASSAGE" />
+      <input type="submit"  value="SEND MASSAGE" className={classes.inp}/>
     </form>
   </div>
 )};
@@ -59,7 +59,6 @@ const styles = css`
       padding: 14px;
       border: 1px solid #ddd;
       outline: none;
-      color: #7a7a7a;
       &::placeholder {
         color: #7a7a7a;
       }

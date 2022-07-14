@@ -33,7 +33,7 @@ const Profile = () => {
         <div class="card mb-3" >
           <div class="row g-0">
             <div class="col-md-4 gradient-custom text-center text-white" >
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+              <img src="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
                 alt="Avatar" class="img-fluid my-5"  />
               <h5>Marie Horwitz</h5>
               <p>Web Designer</p>

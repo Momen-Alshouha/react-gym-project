@@ -1,10 +1,19 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
-import React from "react";
+import React,{useContext} from "react";
 import Link from "./Link";
+import { NavLink } from "react-router-dom";
+import Context from "../context";
 import Button from "../GlobalComponents/Button";
-
-const LinksContainer = ({ hidden }) => {
+import Login from "../Login/Login";
+import classes from '../Login/Login.module.css'
+const LinksContainer = (props,{ hidden }) => {
+  const ctx = useContext(Context);
+  const logoutHandler = () => {
+    console.log('hi');
+    localStorage.removeItem('id');
+    localStorage.removeItem('isLoggedIn');
+  }
   return (
     <div css={styles} className={(hidden ? "hidden" : "") + " linksContainer"}>
       <Link name="HOME" linkTo="#home" />
@@ -12,7 +21,9 @@ const LinksContainer = ({ hidden }) => {
       <Link name="CLASSES" linkTo="#ourClasses" />
       <Link name="SCHEDULES" linkTo="#schedule" />
       <Link name="CONTACT" linkTo="#contact" />
-      <Button text="SIGN UP" />
+      {localStorage.getItem('isLoggedIn') != '1' && <NavLink onClick={logoutHandler} to="/register" className={classes.NavLink}>Signup</NavLink>}
+      {localStorage.getItem('isLoggedIn') == '1' && <NavLink onClick={logoutHandler} to="/" className={classes.NavLink}>Logout</NavLink>}
+      {localStorage.getItem('isLoggedIn') != '1' && <NavLink onClick={logoutHandler} to="/Login" className={classes.NavLink}>Signin</NavLink>}
     </div>
   );
 };

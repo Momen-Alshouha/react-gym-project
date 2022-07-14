@@ -59,8 +59,9 @@ const styles = css`
     }
   }
   .btn {
-    padding: 24px 0;
-    border-radius: 4px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 30px;
   }
   @media (max-width: 900px) {
     max-width: 590px;
